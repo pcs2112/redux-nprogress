@@ -16,7 +16,7 @@ export const withNProgress = (WrappedComponent = NProgressTemplate, stateName) =
 
     componentWillMount() {
       if (isDOMAvailable()) {
-        const {nprogress, color} = this.props;
+        const { nprogress, color } = this.props;
         const template = renderToString(
           <WrappedComponent color={color}/>
         );
@@ -41,6 +41,7 @@ export const withNProgress = (WrappedComponent = NProgressTemplate, stateName) =
 
     componentWillUnmount() {
       if (isDOMAvailable()) {
+        NProgress.done();
         NProgress.remove();
       }
     }
