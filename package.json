@@ -1,14 +1,14 @@
 {
-  "name": "redux-flash-message",
+  "name": "redux-nprogress",
   "description": "High order component to display flash messages.",
   "author": "Vince Chavez <vchavez92780@gmail.com> (http://github.com/pcs2112)",
   "license": "MIT",
   "version": "0.0.1",
   "repository": {
     "type": "git",
-    "url": "https://github.com/pcs2112/redux-flash-message"
+    "url": "https://github.com/pcs2112/redux-nprogress"
   },
-  "homepage": "https://github.com/pcs2112/redux-flash-message",
+  "homepage": "https://github.com/pcs2112/redux-nprogress",
   "keywords": [
     "Redux",
     "React",
