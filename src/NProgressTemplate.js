@@ -22,11 +22,12 @@ const pegStyles = {
   transform: 'rotate(3deg) translate(0px, -4px)'
 };
 
-export const NProgressTemplate = ({ color = '#29d' }) => (
-  <div className="bar"
-       role="bar"
-       style={{ ...barStyles, background: color }}>
-
+const NProgressTemplate = ({ color }) => (
+  <div
+    className="bar"
+    role="progressbar"
+    style={{ ...barStyles, background: color }}
+  >
     <div className="peg" style={{ ...pegStyles, boxShadow: `0 0 10px ${color}, 0 0 5px ${color}` }} />
   </div>
 );
@@ -35,4 +36,10 @@ NProgressTemplate.propTypes = {
   color: PropTypes.string
 };
 
+NProgressTemplate.defaultProps = {
+  color: '#29d'
+};
+
 NProgressTemplate.displayName = 'NProgressTemplate';
+
+export default NProgressTemplate;

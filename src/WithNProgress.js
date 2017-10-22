@@ -4,12 +4,12 @@ import { renderToString } from 'react-dom/server';
 import { connect } from 'react-redux';
 import NProgress from 'nprogress';
 import { getDisplayName, isDOMAvailable } from './utils';
-import { NProgressTemplate } from './NProgressTemplate';
+import NProgressTemplate from './NProgressTemplate';
 
-export const withNProgress = (WrappedComponent = NProgressTemplate, stateName) => {
+const withNProgress = (WrappedComponent = NProgressTemplate, stateName) => {
   class WithNProgress extends Component {
     static propTypes = {
-      nprogress: PropTypes.object,
+      nprogress: PropTypes.object, // eslint-disable-line
       color: PropTypes.string.isRequired,
       increment: PropTypes.number.isRequired
     };
@@ -17,9 +17,7 @@ export const withNProgress = (WrappedComponent = NProgressTemplate, stateName) =
     componentWillMount() {
       if (isDOMAvailable()) {
         const { nprogress, color } = this.props;
-        const template = renderToString(
-          <WrappedComponent color={color}/>
-        );
+        const template = renderToString(<WrappedComponent color={color} />);
 
         NProgress.configure({
           ...nprogress, template
@@ -54,9 +52,11 @@ export const withNProgress = (WrappedComponent = NProgressTemplate, stateName) =
   WithNProgress.displayName = `WithNProgress(${getDisplayName(WrappedComponent)})`;
 
   return connect(
-    (state) => ({
+    state => ({
       increment: state[stateName].increment
     }),
     null
   )(WithNProgress);
 };
+
+export default withNProgress;
