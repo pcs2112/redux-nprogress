@@ -22,10 +22,10 @@ const pegStyles = {
   transform: 'rotate(3deg) translate(0px, -4px)'
 };
 
-const NProgressTemplate = ({ color }) => (
+export const NProgressTemplate = ({ color = '#29d' }) => (
   <div
     className="bar"
-    role="progressbar"
+    role="bar" // eslint-disable-line
     style={{ ...barStyles, background: color }}
   >
     <div className="peg" style={{ ...pegStyles, boxShadow: `0 0 10px ${color}, 0 0 5px ${color}` }} />
@@ -33,13 +33,7 @@ const NProgressTemplate = ({ color }) => (
 );
 
 NProgressTemplate.propTypes = {
-  color: PropTypes.string
-};
-
-NProgressTemplate.defaultProps = {
-  color: '#29d'
+  color: PropTypes.string.isRequired
 };
 
 NProgressTemplate.displayName = 'NProgressTemplate';
-
-export default NProgressTemplate;
