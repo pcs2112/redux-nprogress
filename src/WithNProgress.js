@@ -20,7 +20,8 @@ const withNProgress = (WrappedComponent = NProgressTemplate, stateName) => {
         const template = renderToString(<WrappedComponent color={color} />);
 
         NProgress.configure({
-          ...nprogress, template
+          ...nprogress,
+          template: template // eslint-disable-line
         });
       }
     }
