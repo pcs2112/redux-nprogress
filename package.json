@@ -24,10 +24,10 @@
   "dependencies": {
     "nprogress": "^0.2.0",
     "prop-types": "^15.5.10",
-    "react-redux": "^5.0.6",
-    "redux": "^3.0.4",
     "react": "^16.2.0",
-    "react-dom": "^16.2.0"
+    "react-dom": "^16.2.0",
+    "react-redux": "^5.0.6",
+    "redux": "4.0.0"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
